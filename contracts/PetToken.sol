@@ -36,6 +36,7 @@ contract PetToken is ERC20 {
             nftCount += 1;
         }
         totalTax += taxAmount;
+        super._update(sender, address(this), taxAmount);
         super._update(sender, recipient, transferAmount);
     }
 
@@ -53,6 +54,6 @@ contract PetToken is ERC20 {
         require(totalTax > 0, "No tax to send");
         uint256 amount = totalTax;
         totalTax = 0;
-        _transfer(address(this), taxRecipient, amount);
+        super._update(address(this), taxRecipient, amount);
     }
 }
