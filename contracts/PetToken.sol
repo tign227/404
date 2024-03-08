@@ -35,6 +35,7 @@ contract PetToken is ERC20 {
             hasReceivedEgg[recipient] = true;
             nftCount += 1;
         }
+        //hook
         totalTax += taxAmount;
         super._update(sender, address(this), taxAmount);
         super._update(sender, recipient, transferAmount);

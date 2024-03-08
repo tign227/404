@@ -22,7 +22,7 @@ contract PetNFT is ERC721 {
 
     function mint(address to, uint256 tokenId) external {
         _mint(to, tokenId);
-        stages[tokenId] = Stage.Adult;
+        stages[tokenId] = Stage.Egg;
     }
 
     function mockStageChanged(uint tokenId) external {
