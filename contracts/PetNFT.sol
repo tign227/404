@@ -24,12 +24,12 @@ contract PetNFT is ERC721 {
         _mint(to, tokenId);
         stages[tokenId] = Stage.Egg;
     }
-
+    //trigger by Chainlink Oracle
     function mockStageChanged(uint tokenId) external {
         require(ownerOf(tokenId) == msg.sender, "not owner");
-        Stage storage stage = stages[tokenId];
+        Stage  stage = stages[tokenId];
         require(uint(stage) != 0, "don't exist");
-        stages[msg.sender] = Stage(uint(currentStage) + 1);
+        stages[tokenId] = Stage(uint(stage) + 1);
     }
     
 }

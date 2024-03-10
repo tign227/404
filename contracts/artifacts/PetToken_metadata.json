@@ -296,6 +296,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "sendTotalTaxToRecipient",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -657,19 +664,19 @@
 			]
 		},
 		"contracts/PetNFT.sol": {
-			"keccak256": "0xd7f55bfc012896339d4832a5279bacc1086be3bc5af34d8ec0a60edf7865c83f",
+			"keccak256": "0xb27e0416c64b7e3d0cd75d9af20fb95ac2ebcb07782834d82dde0079fb8a01ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3b198f971d4cf2ec6ff86e065757c7ef04af407598fb475c2f311ba7a0b5432a",
-				"dweb:/ipfs/QmbvY4GgnS86DSQcL8ixd11Az3v8RmqAvUrAnZiJc7TWCr"
+				"bzz-raw://2ed9d22e159e9dd59371ec2ac45c1526376f95e9aa9b76e60d84f219a59e307e",
+				"dweb:/ipfs/QmW8Sh2qpZjzmo12bQTiB4FKAxdRmGXUaDbVhvLBV2cCys"
 			]
 		},
 		"contracts/PetToken.sol": {
-			"keccak256": "0x8669b039da503729bbd21536fd78ff400d509542df53c34946b30fc672edbbaa",
+			"keccak256": "0x3dd433d8da9b90762f512df2c833141b871f0a97588c7f3ae78d16b15389390b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d7fc4ddb68880a0eb7d74fec1809c325d73eadbb560c678eb6b01b637c58b08",
-				"dweb:/ipfs/QmQtdQ9LKR8TedT3FhT419TW84n5J16T33PqMkketRJj2m"
+				"bzz-raw://d51e49131097f971228b200bbafbdf080ea2e3e9aa97d07060ef3b15823229b0",
+				"dweb:/ipfs/QmUBUSsWaR5sKDsSnZmu4wKb7z5jfz6LRyPxTHugGWc5aa"
 			]
 		}
 	},

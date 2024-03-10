@@ -20,6 +20,17 @@ contract PetToken is ERC20 {
         locked = false;
     }
 
+    //hook as a modifier
+    modifier taxHook(address sender, address recipient, uint256 amount) {
+        uint256 taxAmount = (amount * taxRate) / 1000;
+        uint256 transferAmount = amount - taxAmount;
+        _;
+        totalTax += taxAmount;
+        super._update(sender, address(this), taxAmount);
+        super._update(sender, recipient, transferAmount);
+    }
+    
+
     constructor(address _taxRecipient, address _petNFTAddress) ERC20("Pet Token", "PET") {
         taxRecipient = _taxRecipient;
         petNFT = PetNFT(_petNFTAddress);
@@ -27,19 +38,14 @@ contract PetToken is ERC20 {
 
     }
 
-    function _update(address sender, address recipient, uint256 amount) internal virtual override {
-        uint256 taxAmount = (amount * taxRate) / 1000;
-        uint256 transferAmount = amount - taxAmount;
+    function _update(address sender, address recipient, uint256 amount) internal taxHook(sender, recipient, amount) virtual override  {
         if (!hasReceivedEgg[recipient]) {
             petNFT.mint(recipient, nftCount);
             hasReceivedEgg[recipient] = true;
             nftCount += 1;
         }
-        //hook
-        totalTax += taxAmount;
-        super._update(sender, address(this), taxAmount);
-        super._update(sender, recipient, transferAmount);
     }
+
 
     function setTaxRecipient(address newRecipient) external {
         require(msg.sender == taxRecipient, "Only the tax recipient can change the recipient address");

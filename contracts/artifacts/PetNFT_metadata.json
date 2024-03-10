@@ -287,6 +287,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "mockStageChanged",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "name",
 				"outputs": [
@@ -385,6 +398,25 @@
 				"name": "setApprovalForAll",
 				"outputs": [],
 				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "stages",
+				"outputs": [
+					{
+						"internalType": "enum PetNFT.Stage",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -698,11 +730,11 @@
 			]
 		},
 		"contracts/PetNFT.sol": {
-			"keccak256": "0xb2f9b5f5a23fd6f5242e1b1da477006ec2a7105a819d230dada3941a9867b939",
+			"keccak256": "0xb27e0416c64b7e3d0cd75d9af20fb95ac2ebcb07782834d82dde0079fb8a01ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://965f148887b74f664771160d3e989377050c9d7f956546b0037582362afae199",
-				"dweb:/ipfs/QmS2GiGf1SUVys8YXGiG2WHevJbxmGk3ppFoh8HKRSpM9u"
+				"bzz-raw://2ed9d22e159e9dd59371ec2ac45c1526376f95e9aa9b76e60d84f219a59e307e",
+				"dweb:/ipfs/QmW8Sh2qpZjzmo12bQTiB4FKAxdRmGXUaDbVhvLBV2cCys"
 			]
 		}
 	},
